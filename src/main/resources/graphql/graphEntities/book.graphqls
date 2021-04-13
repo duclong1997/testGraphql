@@ -1,0 +1,14 @@
+type book{
+    id: ID!,
+    # !: required
+    name: String!
+    description: String
+    price:Float
+}
+
+input bookIn{
+    id: Int,
+    name: String,
+    description: String,
+    price: Float
+}

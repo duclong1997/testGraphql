@@ -1,0 +1,10 @@
+type user {
+    id: ID
+    username: String
+    firstname: String
+    lastname: String
+    token: String
+    enabled: Boolean
+    role: role
+}
+
