@@ -1,0 +1,9 @@
+type role{
+    id: ID
+    name: rolename
+}
+
+enum rolename{
+    ROLE_USER
+    ROLE_ADMIN
+}
