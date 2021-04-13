@@ -15,7 +15,7 @@ public class UserMutationResolver implements GraphQLMutationResolver {
     @Autowired
     private UserService userService;
 
-    // not Authorization
+    // not Authenticated
     @PreAuthorize("isAnonymous()")
     public UserDto login(String username, String password) {
         return userService.authen(username, password);

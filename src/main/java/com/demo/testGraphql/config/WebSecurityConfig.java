@@ -29,6 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
+    
     @Autowired
     private JwtUserDetailsService jwtUserDetailsService;
 
@@ -50,7 +51,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
-
         httpSecurity
                 .cors()
                 .and()

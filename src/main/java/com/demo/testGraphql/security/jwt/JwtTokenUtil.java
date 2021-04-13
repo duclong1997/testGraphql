@@ -3,10 +3,8 @@ package com.demo.testGraphql.security.jwt;
 import com.demo.testGraphql.models.entities.User;
 import com.demo.testGraphql.repositories.UserRepository;
 import com.demo.testGraphql.security.JwtUser;
-import io.jsonwebtoken.Clock;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.impl.DefaultClock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
@@ -23,7 +21,6 @@ import java.util.stream.Collectors;
 
 @Component
 public class JwtTokenUtil implements Serializable {
-    private Clock clock = DefaultClock.INSTANCE;
 
     @Value("${jwt.secret}")
     private String secret;
@@ -53,8 +50,7 @@ public class JwtTokenUtil implements Serializable {
                 .getBody();
 
         // Setup new authentication to access resources
-        var username = claims.getSubject();
-        return username;
+        return claims.getSubject();
     }
 
     public String generateToken(Authentication authentication) {

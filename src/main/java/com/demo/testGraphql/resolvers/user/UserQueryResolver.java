@@ -15,6 +15,7 @@ public class UserQueryResolver implements GraphQLQueryResolver {
     @Autowired
     private UserService userService;
 
+    // Authenticated
     @PreAuthorize("isAuthenticated()")
     public UserDto getMe() {
         return userService.getMe();
