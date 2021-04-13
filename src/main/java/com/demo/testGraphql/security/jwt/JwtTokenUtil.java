@@ -3,6 +3,7 @@ package com.demo.testGraphql.security.jwt;
 import com.demo.testGraphql.models.entities.User;
 import com.demo.testGraphql.repositories.UserRepository;
 import com.demo.testGraphql.security.JwtUser;
+import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +39,7 @@ public class JwtTokenUtil implements Serializable {
 
     public String getUsernameFromToken(String jwtToken) {
         if (jwtToken == null || !jwtToken.startsWith(prefix)) {
-            return "";
+            throw new ExpiredJwtException(null, null, "Token has been revoked!");
         }
 
         // Remove prefix token

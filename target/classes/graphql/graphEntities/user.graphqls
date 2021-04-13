@@ -7,4 +7,3 @@ type user {
     enabled: Boolean
     role: role
 }
-
