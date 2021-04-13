@@ -74,50 +74,42 @@
             <version>1.4.200</version>
         </dependency>
 
-        <!-- ecurity-->
+        <!-- security -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
             <version>2.4.4</version>
         </dependency>
 
-        <!-- jwt-->
+        <!-- jwt -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
             <version>0.9.1</version>
         </dependency>
 
-        <!-- graph sql-->
+        <!-- graphql -->
+        <!-- https://mvnrepository.com/artifact/com.graphql-java-kickstart/graphql-java-tools -->
         <dependency>
-            <groupId>com.graphql-java</groupId>
-            <artifactId>graphql-spring-boot-starter</artifactId>
-            <version>5.0.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.graphql-java</groupId>
+            <groupId>com.graphql-java-kickstart</groupId>
             <artifactId>graphql-java-tools</artifactId>
-            <version>5.0.0</version>
+            <version>11.0.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.graphql-java-kickstart/graphql-spring-boot-starter -->
         <dependency>
-            <groupId>com.graphql-java</groupId>
-            <artifactId>graphiql-spring-boot-starter</artifactId>
-            <version>5.0.2</version>
+            <groupId>com.graphql-java-kickstart</groupId>
+            <artifactId>graphql-spring-boot-starter</artifactId>
+            <version>11.0.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.graphql-java-kickstart/graphiql-spring-boot-starter -->
         <dependency>
             <groupId>com.graphql-java-kickstart</groupId>
             <artifactId>graphiql-spring-boot-starter</artifactId>
-            <version>6.0.0</version>
+            <version>11.0.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>io.leangen.graphql</groupId>
-            <artifactId>spqr</artifactId>
-            <version>0.9.7</version>
-        </dependency>
     </dependencies>
 
     <build>

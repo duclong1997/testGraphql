@@ -1,8 +1,8 @@
 package com.demo.testGraphql.resolvers.user;
 
-import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.demo.testGraphql.models.dtos.UserDto;
 import com.demo.testGraphql.services.UserService;
+import graphql.kickstart.tools.GraphQLMutationResolver;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

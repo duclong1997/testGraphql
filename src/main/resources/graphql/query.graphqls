@@ -1,22 +1,29 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
 # all available queries on this graphql server
 type Query{
-#    book
+    # book
     bookDetail(id: ID) : book
     getBooks(page: Int, size: Int): [book]
-#    shop
+    # shop
     shopDetail(id: ID): shop
     getShops(page: Int, size: Int): [shop]
+    # user
+    getMe: user
 }
 
 # unpdate or insert db by graphql
 type Mutation {
-#    book
+    # book
     createBook(in: bookIn): book
     updateBook(id: ID, in: bookIn): book
-#    shop
+    # shop
     createShop(in: shopIn): shop
     updateShop(id:ID, in: shopIn): shop
-#    user
-    login(username: String, password: String): user
+    # user
+    login(username: String!, password: String!): user
 
 }
