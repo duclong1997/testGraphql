@@ -4,7 +4,7 @@ schema {
 }
 
 # all available queries on this graphql server
-type Query{
+type Query {
     # book
     bookDetail(id: ID) : book
     getBooks(page: Int, size: Int): [book]
