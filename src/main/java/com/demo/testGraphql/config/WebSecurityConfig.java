@@ -1,7 +1,7 @@
 package com.demo.testGraphql.config;
 
-import com.demo.testGraphql.security.JwtUserDetailsService;
-import com.demo.testGraphql.security.JwtUserDetailsPasswordService;
+import com.demo.testGraphql.security.services.JwtUserDetailsService;
+import com.demo.testGraphql.security.services.JwtUserDetailsPasswordService;
 import com.demo.testGraphql.security.jwt.JwtFilter;
 import com.demo.testGraphql.security.jwt.JwtTokenUtil;
 import lombok.RequiredArgsConstructor;

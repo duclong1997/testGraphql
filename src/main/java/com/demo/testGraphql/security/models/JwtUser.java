@@ -1,4 +1,4 @@
-package com.demo.testGraphql.security;
+package com.demo.testGraphql.security.models;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

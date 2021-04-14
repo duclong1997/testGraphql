@@ -6,7 +6,7 @@ import com.demo.testGraphql.models.dtos.RegisterUser;
 import com.demo.testGraphql.models.dtos.UserDto;
 import com.demo.testGraphql.models.entities.User;
 import com.demo.testGraphql.repositories.UserRepository;
-import com.demo.testGraphql.security.JwtUserDetailsService;
+import com.demo.testGraphql.security.services.JwtUserDetailsService;
 import com.demo.testGraphql.security.jwt.JwtTokenUtil;
 import com.demo.testGraphql.services.UserService;
 import com.demo.testGraphql.utils.UserStatus;

@@ -1,6 +1,6 @@
 package com.demo.testGraphql.config;
 
-import com.demo.testGraphql.security.JwtUser;
+import com.demo.testGraphql.security.models.JwtUser;
 import com.demo.testGraphql.utils.HashUtils;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

@@ -1,7 +1,8 @@
-package com.demo.testGraphql.security;
+package com.demo.testGraphql.security.services;
 
 import com.demo.testGraphql.models.entities.User;
 import com.demo.testGraphql.repositories.UserRepository;
+import com.demo.testGraphql.security.models.JwtUser;
 import com.demo.testGraphql.utils.RoleName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
