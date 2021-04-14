@@ -7048,3 +7048,253 @@ graphql.GraphQLException: Query parameter not found in GET request
 2021-04-14 13:47:32.685  INFO 11484 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-04-14 13:47:32.687  INFO 11484 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-04-14 13:47:32.693  INFO 11484 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-04-14 14:14:55.182  INFO 15812 --- [main] c.d.testGraphql.TestGraphqlApplication   : Starting TestGraphqlApplication using Java 11.0.7 on LAPTOP-5QJRSO7Q with PID 15812 (D:\example_project\back end\testGraphql\target\classes started by ACER in D:\example_project\back end\testGraphQL)
+2021-04-14 14:14:55.184  INFO 15812 --- [main] c.d.testGraphql.TestGraphqlApplication   : No active profile set, falling back to default profiles: default
+2021-04-14 14:14:56.177  INFO 15812 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-14 14:14:56.240  INFO 15812 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 4 JPA repository interfaces.
+2021-04-14 14:14:56.485  INFO 15812 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@59b32539' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-14 14:14:56.488  INFO 15812 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-14 14:14:56.659  INFO 15812 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 10081 (http)
+2021-04-14 14:14:56.666  INFO 15812 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-14 14:14:56.666  INFO 15812 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-14 14:14:56.783  INFO 15812 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-14 14:14:56.783  INFO 15812 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1550 ms
+2021-04-14 14:14:57.081  INFO 15812 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-14 14:14:57.239  INFO 15812 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-14 14:14:58.140  INFO 15812 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-14 14:14:59.691  INFO 15812 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-14 14:14:59.716  INFO 15812 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@79e591bb, org.springframework.security.web.context.SecurityContextPersistenceFilter@445d4517, org.springframework.security.web.header.HeaderWriterFilter@2e1b1d22, org.springframework.web.filter.CorsFilter@208ce928, org.springframework.security.web.authentication.logout.LogoutFilter@4f378d7e, com.demo.testGraphql.security.jwt.JwtFilter@577b2c5f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@125bc00d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@f0deba2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@71eb4ea4, org.springframework.security.web.session.SessionManagementFilter@5e7fc012, org.springframework.security.web.access.ExceptionTranslationFilter@37596b44, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5ef03158]
+2021-04-14 14:14:59.754  INFO 15812 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-14 14:15:00.056  INFO 15812 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 10081 (http) with context path ''
+2021-04-14 14:15:00.068  INFO 15812 --- [main] c.d.testGraphql.TestGraphqlApplication   : Started TestGraphqlApplication in 5.28 seconds (JVM running for 6.623)
+2021-04-14 14:15:00.593  INFO 15812 --- [RMI TCP Connection(3)-10.0.105.165] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-14 14:15:00.594  INFO 15812 --- [RMI TCP Connection(3)-10.0.105.165] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-14 14:15:00.596  INFO 15812 --- [RMI TCP Connection(3)-10.0.105.165] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-04-14 14:15:24.584  INFO 15812 --- [http-nio-10081-exec-1] c.d.testGraphql.security.jwt.JwtFilter   : token not presented...
+2021-04-14 14:15:24.881  INFO 15812 --- [http-nio-10081-exec-2] c.d.testGraphql.security.jwt.JwtFilter   : token not presented...
+2021-04-14 14:15:32.184  INFO 15812 --- [http-nio-10081-exec-3] c.d.testGraphql.security.jwt.JwtFilter   : token not presented...
+2021-04-14 14:15:32.428  INFO 15812 --- [http-nio-10081-exec-4] c.d.testGraphql.security.jwt.JwtFilter   : token not presented...
+2021-04-14 14:16:01.744  INFO 15812 --- [http-nio-10081-exec-5] c.d.testGraphql.security.jwt.JwtFilter   : token not presented...
+2021-04-14 14:16:02.002  INFO 15812 --- [http-nio-10081-exec-6] c.d.testGraphql.security.jwt.JwtFilter   : token not presented...
+2021-04-14 14:17:06.467  INFO 15812 --- [http-nio-10081-exec-9] c.d.testGraphql.security.jwt.JwtFilter   : token not presented...
+2021-04-14 14:17:06.483  WARN 15812 --- [http-nio-10081-exec-9] notprivacysafe.graphql.GraphQL           : Query failed to parse : 'n    query IntrospectionQuery {n      __schema {n        queryType { name }n        mutationType { name }n        subscriptionType { name }n        types {n          ...FullTypen        }n        directives {n          namen          descriptionn          locationsn          args {n            ...InputValuen          }n        }n      }n    }nn    fragment FullType on __Type {n      kindn      namen      descriptionn      fields(includeDeprecated: true) {n        namen        descriptionn        args {n          ...InputValuen        }n        type {n          ...TypeRefn        }n        isDeprecatedn        deprecationReasonn      }n      inputFields {n        ...InputValuen      }n      interfaces {n        ...TypeRefn      }n      enumValues(includeDeprecated: true) {n        namen        descriptionn        isDeprecatedn        deprecationReasonn      }n      possibleTypes {n        ...TypeRefn      }n    }nn    fragment InputValue on __InputValue {n      namen      descriptionn      type { ...TypeRef }n      defaultValuen    }nn    fragment TypeRef on __Type {n      kindn      namen      ofType {n        kindn        namen        ofType {n          kindn          namen          ofType {n            kindn            namen            ofType {n              kindn              namen              ofType {n                kindn                namen                ofType {n                  kindn                  namen                  ofType {n                    kindn                    namen                  }n                }n              }n            }n          }n        }n      }n    }n  '
+2021-04-14 14:17:23.905  INFO 15812 --- [http-nio-10081-exec-10] c.d.testGraphql.security.jwt.JwtFilter   : token not presented...
+2021-04-14 14:17:24.015  INFO 15812 --- [http-nio-10081-exec-10] c.d.t.security.JwtUserDetailsService     : load user...
+2021-04-14 14:17:24.098 ERROR 15812 --- [http-nio-10081-exec-10] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: column user0_.id does not exist
+  Position: 8
+2021-04-14 14:17:24.114  WARN 15812 --- [http-nio-10081-exec-10] n.g.e.SimpleDataFetcherExceptionHandler  : Exception while fetching data (/login) : could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+
+org.springframework.security.authentication.InternalAuthenticationServiceException: could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:108) ~[spring-security-core-5.4.5.jar:5.4.5]
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:133) ~[spring-security-core-5.4.5.jar:5.4.5]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:182) ~[spring-security-core-5.4.5.jar:5.4.5]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:201) ~[spring-security-core-5.4.5.jar:5.4.5]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter$AuthenticationManagerDelegator.authenticate(WebSecurityConfigurerAdapter.java:518) ~[spring-security-config-5.4.5.jar:5.4.5]
+	at com.demo.testGraphql.services.impl.UserServiceImpl.authen(UserServiceImpl.java:46) ~[classes/:na]
+	at com.demo.testGraphql.services.impl.UserServiceImpl$$FastClassBySpringCGLIB$$3a847e57.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.5.jar:5.3.5]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.5.jar:5.3.5]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692) ~[spring-aop-5.3.5.jar:5.3.5]
+	at com.demo.testGraphql.services.impl.UserServiceImpl$$EnhancerBySpringCGLIB$$c3e10e61.authen(<generated>) ~[classes/:na]
+	at com.demo.testGraphql.resolvers.user.UserMutationResolver.login(UserMutationResolver.java:21) ~[classes/:na]
+	at com.demo.testGraphql.resolvers.user.UserMutationResolver$$FastClassBySpringCGLIB$$9c77a167.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.security.access.intercept.aopalliance.MethodSecurityInterceptor.invoke(MethodSecurityInterceptor.java:61) ~[spring-security-core-5.4.5.jar:5.4.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692) ~[spring-aop-5.3.5.jar:5.3.5]
+	at com.demo.testGraphql.resolvers.user.UserMutationResolver$$EnhancerBySpringCGLIB$$649654aa.login(<generated>) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at graphql.kickstart.tools.resolver.MethodFieldResolverDataFetcher.get(MethodFieldResolver.kt:261) ~[graphql-java-tools-11.0.0.jar:na]
+	at graphql.execution.instrumentation.dataloader.DataLoaderDispatcherInstrumentation.lambda$instrumentDataFetcher$0(DataLoaderDispatcherInstrumentation.java:86) ~[graphql-java-16.1.jar:na]
+	at graphql.execution.ExecutionStrategy.fetchField(ExecutionStrategy.java:270) ~[graphql-java-16.1.jar:na]
+	at graphql.execution.ExecutionStrategy.resolveFieldWithInfo(ExecutionStrategy.java:203) ~[graphql-java-16.1.jar:na]
+	at graphql.execution.ExecutionStrategy.resolveField(ExecutionStrategy.java:177) ~[graphql-java-16.1.jar:na]
+	at graphql.execution.AsyncSerialExecutionStrategy.lambda$execute$1(AsyncSerialExecutionStrategy.java:43) ~[graphql-java-16.1.jar:na]
+	at graphql.execution.Async.eachSequentiallyImpl(Async.java:80) ~[graphql-java-16.1.jar:na]
+	at graphql.execution.Async.eachSequentially(Async.java:69) ~[graphql-java-16.1.jar:na]
+	at graphql.execution.AsyncSerialExecutionStrategy.execute(AsyncSerialExecutionStrategy.java:38) ~[graphql-java-16.1.jar:na]
+	at graphql.execution.Execution.executeOperation(Execution.java:165) ~[graphql-java-16.1.jar:na]
+	at graphql.execution.Execution.execute(Execution.java:104) ~[graphql-java-16.1.jar:na]
+	at graphql.GraphQL.execute(GraphQL.java:557) ~[graphql-java-16.1.jar:na]
+	at graphql.GraphQL.parseValidateAndExecute(GraphQL.java:482) ~[graphql-java-16.1.jar:na]
+	at graphql.GraphQL.executeAsync(GraphQL.java:446) ~[graphql-java-16.1.jar:na]
+	at graphql.kickstart.execution.GraphQLInvoker.executeAsync(GraphQLInvoker.java:26) ~[graphql-java-kickstart-11.0.0.jar:na]
+	at graphql.kickstart.execution.GraphQLInvoker.queryAsync(GraphQLInvoker.java:35) ~[graphql-java-kickstart-11.0.0.jar:na]
+	at graphql.kickstart.servlet.HttpRequestInvokerImpl.invoke(HttpRequestInvokerImpl.java:78) ~[graphql-java-servlet-11.0.0.jar:na]
+	at graphql.kickstart.servlet.HttpRequestInvokerImpl.execute(HttpRequestInvokerImpl.java:37) ~[graphql-java-servlet-11.0.0.jar:na]
+	at graphql.kickstart.servlet.HttpRequestHandlerImpl.handle(HttpRequestHandlerImpl.java:39) ~[graphql-java-servlet-11.0.0.jar:na]
+	at graphql.kickstart.servlet.AbstractGraphQLHttpServlet.doRequest(AbstractGraphQLHttpServlet.java:82) ~[graphql-java-servlet-11.0.0.jar:na]
+	at graphql.kickstart.servlet.AbstractGraphQLHttpServlet.doPost(AbstractGraphQLHttpServlet.java:74) ~[graphql-java-servlet-11.0.0.jar:na]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.44.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.44.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:113) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at com.demo.testGraphql.security.jwt.JwtFilter.doFilterInternal(JwtFilter.java:51) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.4.5.jar:5.4.5]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93) ~[spring-boot-actuator-2.4.4.jar:2.4.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.5.jar:5.3.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.44.jar:9.0.44]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: org.springframework.dao.InvalidDataAccessResourceUsageException: could not extract ResultSet; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:259) ~[spring-orm-5.3.5.jar:5.3.5]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:233) ~[spring-orm-5.3.5.jar:5.3.5]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:551) ~[spring-orm-5.3.5.jar:5.3.5]
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61) ~[spring-tx-5.3.5.jar:5.3.5]
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:242) ~[spring-tx-5.3.5.jar:5.3.5]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:152) ~[spring-tx-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:145) ~[spring-data-jpa-2.4.6.jar:2.4.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.5.jar:5.3.5]
+	at com.sun.proxy.$Proxy124.findTopByUsername(Unknown Source) ~[na:na]
+	at com.demo.testGraphql.security.JwtUserDetailsService.loadUserByUsername(JwtUserDetailsService.java:26) ~[classes/:na]
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:93) ~[spring-security-core-5.4.5.jar:5.4.5]
+	... 137 common frames omitted
+Caused by: org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:103) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:67) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2303) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2056) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:2018) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.hibernate.loader.Loader.doQuery(Loader.java:948) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:349) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.hibernate.loader.Loader.doList(Loader.java:2849) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.hibernate.loader.Loader.doList(Loader.java:2831) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2663) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.hibernate.loader.Loader.list(Loader.java:2658) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.hibernate.loader.hql.QueryLoader.list(QueryLoader.java:506) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.list(QueryTranslatorImpl.java:400) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.hibernate.engine.query.spi.HQLQueryPlan.performList(HQLQueryPlan.java:219) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1414) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.hibernate.query.internal.AbstractProducedQuery.doList(AbstractProducedQuery.java:1625) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.hibernate.query.internal.AbstractProducedQuery.list(AbstractProducedQuery.java:1593) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.hibernate.query.internal.AbstractProducedQuery.getSingleResult(AbstractProducedQuery.java:1641) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.hibernate.query.criteria.internal.compile.CriteriaQueryTypeQueryAdapter.getSingleResult(CriteriaQueryTypeQueryAdapter.java:111) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:196) ~[spring-data-jpa-2.4.6.jar:2.4.6]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:88) ~[spring-data-jpa-2.4.6.jar:2.4.6]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:155) ~[spring-data-jpa-2.4.6.jar:2.4.6]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:143) ~[spring-data-jpa-2.4.6.jar:2.4.6]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.4.6.jar:2.4.6]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.4.6.jar:2.4.6]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:152) ~[spring-data-commons-2.4.6.jar:2.4.6]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:131) ~[spring-data-commons-2.4.6.jar:2.4.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.4.6.jar:2.4.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.5.jar:5.3.5]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.5.jar:5.3.5]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.5.jar:5.3.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.5.jar:5.3.5]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.5.jar:5.3.5]
+	... 146 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: column user0_.id does not exist
+  Position: 8
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2553) ~[postgresql-42.2.19.jar:42.2.19]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2285) ~[postgresql-42.2.19.jar:42.2.19]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:323) ~[postgresql-42.2.19.jar:42.2.19]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:481) ~[postgresql-42.2.19.jar:42.2.19]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:401) ~[postgresql-42.2.19.jar:42.2.19]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:164) ~[postgresql-42.2.19.jar:42.2.19]
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:114) ~[postgresql-42.2.19.jar:42.2.19]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52) ~[HikariCP-3.4.5.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.5.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:57) ~[hibernate-core-5.4.29.Final.jar:5.4.29.Final]
+	... 179 common frames omitted
+
+2021-04-14 14:18:55.443  INFO 15812 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-14 14:18:55.447  INFO 15812 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-14 14:18:55.449  INFO 15812 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-04-14 14:18:55.454  INFO 15812 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

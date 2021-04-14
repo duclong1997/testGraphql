@@ -1,7 +1,3 @@
-schema {
-    query: Query
-    mutation: Mutation
-}
 
 # all available queries on this graphql server
 type Query {
@@ -13,17 +9,4 @@ type Query {
     getShops(page: Int, size: Int): [shop]
     # user
     getMe: user
-}
-
-# unpdate or insert db by graphql
-type Mutation {
-    # book
-    createBook(in: bookIn): book
-    updateBook(id: ID, in: bookIn): book
-    # shop
-    createShop(in: shopIn): shop
-    updateShop(id:ID, in: shopIn): shop
-    # user
-    login(username: String!, password: String!): user
-
 }

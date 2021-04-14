@@ -6,6 +6,7 @@ import com.demo.testGraphql.models.dtos.BookIn;
 import com.demo.testGraphql.models.entities.Book;
 import com.demo.testGraphql.repositories.BookRepository;
 import com.demo.testGraphql.services.BookService;
+import graphql.GraphQLException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,7 +43,7 @@ public class BookServiceImpl implements BookService {
             Book book = bookOp.get();
             return bookMapper.entityToDto(book);
         }
-        throw new Exception("book not exist");
+        throw new GraphQLException("book not exist");
     }
 
     @Override
@@ -65,6 +66,6 @@ public class BookServiceImpl implements BookService {
             book = bookRepository.save(book);
             return bookMapper.entityToDto(book);
         }
-        throw new Exception("Book not exist");
+        throw new GraphQLException("Book not exist");
     }
 }

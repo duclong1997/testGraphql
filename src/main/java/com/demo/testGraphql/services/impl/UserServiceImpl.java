@@ -58,7 +58,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto getMe() {
         User user = jwtTokenUtil.getUserCurrent();
-        UserDto userDto = userMapper.entityToDto(user);
-        return userDto;
+        return userMapper.entityToDto(user);
     }
 }
