@@ -12,13 +12,20 @@ public class JwtUser implements UserDetails {
     private final String firstname;
     private final String lastname;
     private final String password;
+    private final String salt;
     private final String email;
+    private final String credential;
     private final Collection<? extends GrantedAuthority> authorities;
     private final boolean enabled;
     private final Date lastPasswordResetDate;
 
     public JwtUser(Long id, String username, String firstname, String lastname, String email,
-                   String password, Collection<? extends GrantedAuthority> authorities, boolean enabled, Date lastPasswordResetDate) {
+                   String password,
+                   Collection<? extends GrantedAuthority> authorities,
+                   boolean enabled,
+                   Date lastPasswordResetDate,
+                   String salt,
+                   String credential) {
         this.id = id;
         this.username = username;
         this.firstname = firstname;
@@ -28,6 +35,8 @@ public class JwtUser implements UserDetails {
         this.authorities = authorities;
         this.enabled = enabled;
         this.lastPasswordResetDate = lastPasswordResetDate;
+        this.salt = salt;
+        this.credential = credential;
     }
 
     @Override
@@ -47,17 +56,17 @@ public class JwtUser implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return true;
+        return enabled;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return enabled;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return true;
+        return enabled;
     }
 
     @Override
@@ -79,5 +88,13 @@ public class JwtUser implements UserDetails {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public String getCredential() {
+        return credential;
     }
 }

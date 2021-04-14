@@ -7,3 +7,11 @@ type user {
     enabled: Boolean
     role: role
 }
+
+input registerUser{
+    username : String
+    password: String
+    firstname: String
+    lastname: String
+    email: String
+}

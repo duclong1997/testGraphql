@@ -1,6 +1,7 @@
 package com.demo.testGraphql.config;
 
 import com.demo.testGraphql.security.JwtUserDetailsService;
+import com.demo.testGraphql.security.JwtUserDetailsPasswordService;
 import com.demo.testGraphql.security.jwt.JwtFilter;
 import com.demo.testGraphql.security.jwt.JwtTokenUtil;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +11,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -17,7 +19,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
@@ -29,17 +30,29 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
-    
+
     @Autowired
     private JwtUserDetailsService jwtUserDetailsService;
 
     @Autowired
+    private JwtUserDetailsPasswordService jwtUserDetailsPasswordService;
+
+    @Bean
+    public AuthenticationProvider jwtAuthenticationProvider() {
+        var authenticationProvider = new JwtDaoAuthenticationProvider();
+        authenticationProvider.setUserDetailsService(jwtUserDetailsService);
+        authenticationProvider.setUserDetailsPasswordService(jwtUserDetailsPasswordService);
+        authenticationProvider.setPasswordEncoder(passwordEncoder());
+        return authenticationProvider;
+    }
+
+    @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(jwtUserDetailsService).passwordEncoder(passwordEncoderBean());
+        auth.authenticationProvider(jwtAuthenticationProvider());
     }
 
     @Bean
-    public PasswordEncoder passwordEncoderBean() {
+    public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
@@ -60,11 +73,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-//                .antMatchers("/graphql/**","/playground/**","/vendor/**","/voyager/**")
+//                .antMatchers("/graphql/**", "/playground/**", "/vendor/**", "/voyager/**")
 //                .permitAll()
-                .anyRequest().permitAll()
+                .anyRequest()
+                .permitAll()
 //                .authenticated()
                 .and()
-                .addFilterBefore(new JwtFilter(userDetailsService(), jwtTokenUtil), UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(new JwtFilter(jwtUserDetailsService, jwtTokenUtil), UsernamePasswordAuthenticationFilter.class);
     }
 }

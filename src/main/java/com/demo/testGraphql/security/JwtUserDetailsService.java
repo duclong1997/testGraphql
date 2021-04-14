@@ -2,6 +2,7 @@ package com.demo.testGraphql.security;
 
 import com.demo.testGraphql.models.entities.User;
 import com.demo.testGraphql.repositories.UserRepository;
+import com.demo.testGraphql.utils.RoleName;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,9 +43,13 @@ public class JwtUserDetailsService implements UserDetailsService {
                 user.getLastname(),
                 user.getEmail(),
                 user.getPassword(),
-                List.of(new SimpleGrantedAuthority(user.getRole().getName().name())),
+                List.of(new SimpleGrantedAuthority(user.getRole() != null
+                        ? user.getRole().getName().name()
+                        : RoleName.ROLE_USER.toString())),
                 user.getEnabled(),
-                null
+                null,
+                user.getSalt(),
+                user.getPassword()
         );
     }
 }

@@ -1,5 +1,6 @@
 package com.demo.testGraphql.resolvers.user;
 
+import com.demo.testGraphql.models.dtos.RegisterUser;
 import com.demo.testGraphql.models.dtos.UserDto;
 import com.demo.testGraphql.services.UserService;
 import graphql.kickstart.tools.GraphQLMutationResolver;
@@ -19,5 +20,10 @@ public class UserMutationResolver implements GraphQLMutationResolver {
     @PreAuthorize("isAnonymous()")
     public UserDto login(String username, String password) {
         return userService.authen(username, password);
+    }
+
+    @PreAuthorize("isAnonymous()")
+    public UserDto register(RegisterUser userRegister){
+        return this.userService.register(userRegister);
     }
 }

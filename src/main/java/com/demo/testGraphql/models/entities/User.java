@@ -10,10 +10,10 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Data
-@Entity
-@Table(name = "user")
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table(name = "ht_user")
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -38,6 +38,9 @@ public class User implements Serializable {
     @Column(name = "ENABLED")
     @NotNull
     private Boolean enabled;
+
+    @Column(name = "salt")
+    private String salt;
 
     @ManyToOne
     @JoinColumn(name="role_id")
