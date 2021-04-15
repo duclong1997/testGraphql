@@ -3,12 +3,12 @@ type book{
     # !: required
     name: String!
     description: String
-    price:Float
+    price: NonNegativeFloat
 }
 
 input bookIn{
-    id: Int,
+    id: ID,
     name: String,
     description: String,
-    price: Float
+    price: NonNegativeFloat
 }

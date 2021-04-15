@@ -220,5 +220,6 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.module:jackson-module-kotlin:2.11.4" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.graphql-java-kickstart:voyager-spring-boot-starter:11.0.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.graphql-java-kickstart:voyager-spring-boot-autoconfigure:11.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.graphql-java:graphql-java-extended-scalars:2021-03-31T04-38-21-f03414a" level="project" />
   </component>
 </module>

@@ -103,7 +103,7 @@
             <version>11.0.0</version>
         </dependency>
 
-        <!-- payground-->
+        <!-- playground-->
         <dependency>
             <groupId>com.graphql-java-kickstart</groupId>
             <artifactId>playground-spring-boot-starter</artifactId>
@@ -124,6 +124,19 @@
             <artifactId>voyager-spring-boot-starter</artifactId>
             <version>11.0.0</version>
             <scope>runtime</scope>
+        </dependency>
+
+        <!-- scalar-->
+        <dependency>
+            <groupId>com.graphql-java</groupId>
+            <artifactId>graphql-java-extended-scalars</artifactId>
+            <version>2021-03-31T04-38-21-f03414a</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.graphql-java</groupId>
+                    <artifactId>graphql-java</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
     </dependencies>

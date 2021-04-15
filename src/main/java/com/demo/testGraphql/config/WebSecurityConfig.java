@@ -1,9 +1,10 @@
 package com.demo.testGraphql.config;
 
-import com.demo.testGraphql.security.services.JwtUserDetailsService;
-import com.demo.testGraphql.security.services.JwtUserDetailsPasswordService;
+import com.demo.testGraphql.security.auth.JwtDaoAuthenticationProvider;
 import com.demo.testGraphql.security.jwt.JwtFilter;
 import com.demo.testGraphql.security.jwt.JwtTokenUtil;
+import com.demo.testGraphql.security.services.JwtUserDetailsPasswordService;
+import com.demo.testGraphql.security.services.JwtUserDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;

@@ -15,5 +15,5 @@ input registerUser{
     firstname: String
     lastname: String
     email: String
-    roleId: Int
+    roleId: ID
 }

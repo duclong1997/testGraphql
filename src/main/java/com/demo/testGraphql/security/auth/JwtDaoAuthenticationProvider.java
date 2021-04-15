@@ -1,4 +1,4 @@
-package com.demo.testGraphql.config;
+package com.demo.testGraphql.security.auth;
 
 import com.demo.testGraphql.security.models.JwtUser;
 import com.demo.testGraphql.utils.HashUtils;
