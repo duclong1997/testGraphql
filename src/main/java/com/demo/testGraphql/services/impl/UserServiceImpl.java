@@ -4,10 +4,12 @@ import com.demo.testGraphql.helpers.PasswordHelper;
 import com.demo.testGraphql.mappers.UserMapper;
 import com.demo.testGraphql.models.dtos.RegisterUser;
 import com.demo.testGraphql.models.dtos.UserDto;
+import com.demo.testGraphql.models.entities.Role;
 import com.demo.testGraphql.models.entities.User;
+import com.demo.testGraphql.repositories.RoleRepository;
 import com.demo.testGraphql.repositories.UserRepository;
-import com.demo.testGraphql.security.services.JwtUserDetailsService;
 import com.demo.testGraphql.security.jwt.JwtTokenUtil;
+import com.demo.testGraphql.security.services.JwtUserDetailsService;
 import com.demo.testGraphql.services.UserService;
 import com.demo.testGraphql.utils.UserStatus;
 import graphql.GraphQLException;
@@ -42,9 +44,13 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private PasswordHelper passwordHelper;
 
-    public UserServiceImpl(AuthenticationManager authenticationManager, PasswordHelper passwordHelper) {
+    @Autowired
+    private RoleRepository roleRepository;
+
+    public UserServiceImpl(AuthenticationManager authenticationManager, PasswordHelper passwordHelper, RoleRepository roleRepository) {
         this.authenticationManager = authenticationManager;
         this.passwordHelper = passwordHelper;
+        this.roleRepository = roleRepository;
     }
 
     @Override
@@ -90,6 +96,17 @@ public class UserServiceImpl implements UserService {
         final var saltPasswordPair = passwordHelper.createPassword(userRegister.getPassword());
         user.setSalt(saltPasswordPair.getLeft());
         user.setPassword(saltPasswordPair.getRight());
+        // role
+        if (userRegister.getRoleId() != null) {
+            Optional<Role> roleOp = roleRepository.findById(userRegister.getRoleId());
+            if (roleOp.isPresent()) {
+                user.setRole(roleOp.get());
+                user = userRepository.save(user);
+
+                return userMapper.entityToDto(user);
+            }
+        }
+        user.setRole(null);
         user = userRepository.save(user);
 
         return userMapper.entityToDto(user);

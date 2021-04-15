@@ -4,6 +4,7 @@ type user {
     firstname: String
     lastname: String
     token: String
+    email: String
     enabled: Boolean
     role: role
 }
@@ -14,4 +15,5 @@ input registerUser{
     firstname: String
     lastname: String
     email: String
+    roleId: Int
 }

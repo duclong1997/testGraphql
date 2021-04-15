@@ -1,6 +1,6 @@
 type role{
     id: ID
-    name: rolename
+    name: String
 }
 
 enum rolename{

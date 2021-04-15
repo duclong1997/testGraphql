@@ -1,4 +1,3 @@
-
 # all available queries on this graphql server
 type Query {
     # book
@@ -9,4 +8,7 @@ type Query {
     getShops(page: Int, size: Int): [shop]
     # user
     getMe: user
+    # role
+    getRoles(page:Int, size: Int):[role]
+    getDetailRole(id:ID):role
 }

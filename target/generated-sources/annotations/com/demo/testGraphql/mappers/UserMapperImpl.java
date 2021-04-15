@@ -1,6 +1,8 @@
 package com.demo.testGraphql.mappers;
 
+import com.demo.testGraphql.models.dtos.RoleDto;
 import com.demo.testGraphql.models.dtos.UserDto;
+import com.demo.testGraphql.models.entities.Role;
 import com.demo.testGraphql.models.entities.User;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-04-15T03:17:49+0700",
+    date = "2021-04-15T21:37:36+0700",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11.0.7 (Oracle Corporation)"
 )
 @Component
@@ -35,11 +37,14 @@ public class UserMapperImpl implements UserMapper {
         if ( dto.getLastname() != null ) {
             user.setLastname( dto.getLastname() );
         }
+        if ( dto.getEmail() != null ) {
+            user.setEmail( dto.getEmail() );
+        }
         if ( dto.getEnabled() != null ) {
             user.setEnabled( dto.getEnabled() );
         }
         if ( dto.getRole() != null ) {
-            user.setRole( dto.getRole() );
+            user.setRole( roleDtoToRole( dto.getRole() ) );
         }
 
         return user;
@@ -65,11 +70,14 @@ public class UserMapperImpl implements UserMapper {
         if ( entity.getLastname() != null ) {
             userDto.setLastname( entity.getLastname() );
         }
+        if ( entity.getEmail() != null ) {
+            userDto.setEmail( entity.getEmail() );
+        }
         if ( entity.getEnabled() != null ) {
             userDto.setEnabled( entity.getEnabled() );
         }
         if ( entity.getRole() != null ) {
-            userDto.setRole( entity.getRole() );
+            userDto.setRole( roleToRoleDto( entity.getRole() ) );
         }
 
         return userDto;
@@ -101,5 +109,39 @@ public class UserMapperImpl implements UserMapper {
         }
 
         return list;
+    }
+
+    protected Role roleDtoToRole(RoleDto roleDto) {
+        if ( roleDto == null ) {
+            return null;
+        }
+
+        Role role = new Role();
+
+        if ( roleDto.getId() != null ) {
+            role.setId( roleDto.getId() );
+        }
+        if ( roleDto.getName() != null ) {
+            role.setName( roleDto.getName() );
+        }
+
+        return role;
+    }
+
+    protected RoleDto roleToRoleDto(Role role) {
+        if ( role == null ) {
+            return null;
+        }
+
+        RoleDto roleDto = new RoleDto();
+
+        if ( role.getId() != null ) {
+            roleDto.setId( role.getId() );
+        }
+        if ( role.getName() != null ) {
+            roleDto.setName( role.getName() );
+        }
+
+        return roleDto;
     }
 }

@@ -22,8 +22,7 @@ public class Role implements Serializable {
 
     @Column(name = "name", length = 50)
     @NotNull
-    @Enumerated(EnumType.STRING)
-    private RoleName name;
+    private String name;
 
     @OneToMany(mappedBy = "role", fetch = FetchType.LAZY)
     private List<User> users;
