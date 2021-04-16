@@ -11,6 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.time.Clock;
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,6 +25,9 @@ public class BookServiceImpl implements BookService {
 
     @Autowired
     private BookMapper bookMapper;
+
+    @Autowired
+    private Clock clock;
 
     @Override
     @Transactional
@@ -41,6 +47,9 @@ public class BookServiceImpl implements BookService {
         Optional<Book> bookOp = bookRepository.findById(id);
         if (bookOp.isPresent()) {
             Book book = bookOp.get();
+            BookDto bookDto = bookMapper.entityToDto(book);
+            bookDto.setCreateAt(ZonedDateTime.now(clock));
+            bookDto.setCreateOn(LocalDate.now(clock));
             return bookMapper.entityToDto(book);
         }
         throw new GraphQLException("book not exist");

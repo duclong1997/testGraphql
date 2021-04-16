@@ -4,6 +4,8 @@ type book{
     name: String!
     description: String
     price: NonNegativeFloat
+    createOn: Date
+    createAt: DateTime
 }
 
 input bookIn{

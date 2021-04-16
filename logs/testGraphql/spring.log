@@ -36,3 +36,62 @@
 2021-04-17 00:02:24.121  INFO 12784 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-04-17 00:02:24.123  INFO 12784 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-04-17 00:02:24.129  INFO 12784 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-04-17 00:03:12.286  INFO 1328 --- [main] c.d.testGraphql.TestGraphqlApplication   : Starting TestGraphqlApplication using Java 11.0.7 on LAPTOP-5QJRSO7Q with PID 1328 (D:\example_project\back end\testGraphql\target\classes started by ACER in D:\example_project\back end\testGraphQL)
+2021-04-17 00:03:12.288  INFO 1328 --- [main] c.d.testGraphql.TestGraphqlApplication   : No active profile set, falling back to default profiles: default
+2021-04-17 00:03:13.229  INFO 1328 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-17 00:03:13.291  INFO 1328 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 4 JPA repository interfaces.
+2021-04-17 00:03:13.558  INFO 1328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5e5beb8a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-17 00:03:13.561  INFO 1328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-17 00:03:13.737  INFO 1328 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 10081 (http)
+2021-04-17 00:03:13.743  INFO 1328 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-17 00:03:13.743  INFO 1328 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-17 00:03:13.866  INFO 1328 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-17 00:03:13.866  INFO 1328 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1537 ms
+2021-04-17 00:03:14.196  INFO 1328 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-17 00:03:14.355  INFO 1328 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-17 00:03:15.436  INFO 1328 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-17 00:03:16.521  WARN 1328 --- [main] g.kickstart.tools.SchemaClassScanner     : Schema type was defined but can never be accessed, and can be safely deleted: rolename
+2021-04-17 00:03:16.521  WARN 1328 --- [main] g.kickstart.tools.SchemaClassScanner     : Schema type was defined but can never be accessed, and can be safely deleted: NonNegativeInt
+2021-04-17 00:03:16.963  INFO 1328 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-17 00:03:16.989  INFO 1328 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@56d189d0, org.springframework.security.web.context.SecurityContextPersistenceFilter@2250deae, org.springframework.security.web.header.HeaderWriterFilter@63b85d97, org.springframework.web.filter.CorsFilter@14941b06, org.springframework.security.web.authentication.logout.LogoutFilter@2f4bc3ff, com.demo.testGraphql.security.jwt.JwtFilter@7d776105, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3fb920d9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@39aaa7db, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@461e479c, org.springframework.security.web.session.SessionManagementFilter@64b242b3, org.springframework.security.web.access.ExceptionTranslationFilter@383d2e2d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6e98fd10]
+2021-04-17 00:03:17.034  INFO 1328 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-17 00:03:17.352  INFO 1328 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 10081 (http) with context path ''
+2021-04-17 00:03:17.365  INFO 1328 --- [main] c.d.testGraphql.TestGraphqlApplication   : Started TestGraphqlApplication in 5.403 seconds (JVM running for 6.439)
+2021-04-17 00:03:18.030  INFO 1328 --- [RMI TCP Connection(4)-10.0.105.165] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-17 00:03:18.032  INFO 1328 --- [RMI TCP Connection(4)-10.0.105.165] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-17 00:03:18.033  INFO 1328 --- [RMI TCP Connection(4)-10.0.105.165] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-04-17 00:03:26.380  INFO 1328 --- [http-nio-10081-exec-2] c.d.testGraphql.security.jwt.JwtFilter   : token not presented...
+2021-04-17 00:03:26.527  INFO 1328 --- [http-nio-10081-exec-2] c.d.t.r.user.UserMutationResolver        : upload file: code mau.sql, size 6768
+2021-04-17 00:03:26.528  INFO 1328 --- [http-nio-10081-exec-2] c.d.t.r.user.UserMutationResolver        : file data: java.io.FileInputStream@46e6c4cf 
+2021-04-17 01:10:06.430  INFO 1328 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-17 01:10:06.441  INFO 1328 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-17 01:10:06.454  INFO 1328 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-04-17 01:10:06.461  INFO 1328 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-04-17 01:23:46.233  INFO 6956 --- [main] c.d.testGraphql.TestGraphqlApplication   : Starting TestGraphqlApplication using Java 11.0.7 on LAPTOP-5QJRSO7Q with PID 6956 (D:\example_project\back end\testGraphql\target\classes started by ACER in D:\example_project\back end\testGraphQL)
+2021-04-17 01:23:46.236  INFO 6956 --- [main] c.d.testGraphql.TestGraphqlApplication   : No active profile set, falling back to default profiles: default
+2021-04-17 01:23:47.171  INFO 6956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-17 01:23:47.236  INFO 6956 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 4 JPA repository interfaces.
+2021-04-17 01:23:47.477  INFO 6956 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2f80cb79' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-17 01:23:47.480  INFO 6956 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-04-17 01:23:47.647  INFO 6956 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 10081 (http)
+2021-04-17 01:23:47.653  INFO 6956 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-17 01:23:47.654  INFO 6956 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-17 01:23:47.764  INFO 6956 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-17 01:23:47.764  INFO 6956 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1493 ms
+2021-04-17 01:23:48.085  INFO 6956 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-17 01:23:48.236  INFO 6956 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-17 01:23:49.326  INFO 6956 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-17 01:23:50.423  WARN 6956 --- [main] g.kickstart.tools.SchemaClassScanner     : Schema type was defined but can never be accessed, and can be safely deleted: rolename
+2021-04-17 01:23:50.423  WARN 6956 --- [main] g.kickstart.tools.SchemaClassScanner     : Schema type was defined but can never be accessed, and can be safely deleted: NonNegativeInt
+2021-04-17 01:23:50.865  INFO 6956 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-04-17 01:23:50.891  INFO 6956 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2cb4e4b1, org.springframework.security.web.context.SecurityContextPersistenceFilter@5c21b22e, org.springframework.security.web.header.HeaderWriterFilter@130a99fe, org.springframework.web.filter.CorsFilter@6e3552b0, org.springframework.security.web.authentication.logout.LogoutFilter@324e62e2, com.demo.testGraphql.security.jwt.JwtFilter@6971c6b7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6527aa0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@fffb4a8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@402d45c6, org.springframework.security.web.session.SessionManagementFilter@7dbc77ca, org.springframework.security.web.access.ExceptionTranslationFilter@23657729, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@52d625bd]
+2021-04-17 01:23:50.932  INFO 6956 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-17 01:23:51.266  INFO 6956 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 10081 (http) with context path ''
+2021-04-17 01:23:51.279  INFO 6956 --- [main] c.d.testGraphql.TestGraphqlApplication   : Started TestGraphqlApplication in 5.485 seconds (JVM running for 6.573)
+2021-04-17 01:23:51.639  INFO 6956 --- [RMI TCP Connection(2)-10.0.105.165] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-17 01:23:51.640  INFO 6956 --- [RMI TCP Connection(2)-10.0.105.165] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-17 01:23:51.641  INFO 6956 --- [RMI TCP Connection(2)-10.0.105.165] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-04-17 01:23:59.235  INFO 6956 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-17 01:23:59.240  INFO 6956 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-04-17 01:23:59.244  INFO 6956 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-04-17 01:23:59.249  INFO 6956 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

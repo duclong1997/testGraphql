@@ -2,6 +2,8 @@
 scalar NonNegativeInt
 # validate float greater than or equal to 0 (>=0)
 scalar NonNegativeFloat
+scalar Date
+scalar DateTime
 # unpdate or insert db by graphql
 type Mutation {
     # book
