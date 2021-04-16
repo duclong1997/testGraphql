@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
 
+import java.io.*;
+
 @Component
 @RequiredArgsConstructor
 @Slf4j
@@ -38,6 +40,23 @@ public class UserMutationResolver implements GraphQLMutationResolver {
 
         context.getFileParts().forEach(part -> {
             log.info("upload file: {}, size {}", part.getSubmittedFileName(), part.getSize());
+            try {
+                log.info("file data: {} ", part.getInputStream());
+                InputStream initialStream = part.getInputStream();
+                String path = "src/main/resources/images";
+                File targetFile = new File(path);
+                if (!targetFile.exists()) {
+                    targetFile.mkdir();
+                }
+                File file = new File(path + "/" + part.getSubmittedFileName());
+                byte[] buffer = new byte[initialStream.available()];
+                initialStream.read(buffer);
+                OutputStream outStream = new FileOutputStream(file);
+                outStream.write(buffer);
+                outStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
         return new UserDto();
     }
