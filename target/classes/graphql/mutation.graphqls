@@ -4,6 +4,8 @@ scalar NonNegativeInt
 scalar NonNegativeFloat
 scalar Date
 scalar DateTime
+scalar Upload
+
 # unpdate or insert db by graphql
 type Mutation {
     # book
@@ -15,7 +17,7 @@ type Mutation {
     # user
     login(username: String!, password: String!): user
     register(userRegister: registerUser): user
-    uploadFileImg: user
+    uploadFileImg(avatar: Upload!): user
     # role
     createRole(name: String):role
     updateRole(id:ID, name: String):role

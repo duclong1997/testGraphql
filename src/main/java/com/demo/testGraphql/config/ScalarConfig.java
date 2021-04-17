@@ -1,5 +1,6 @@
 package com.demo.testGraphql.config;
 
+import graphql.kickstart.servlet.apollo.ApolloScalars;
 import graphql.scalars.ExtendedScalars;
 import graphql.schema.GraphQLScalarType;
 import org.springframework.context.annotation.Bean;
@@ -26,5 +27,10 @@ public class ScalarConfig {
     @Bean
     public GraphQLScalarType dateTime() {
         return ExtendedScalars.DateTime;
+    }
+
+    @Bean
+    public GraphQLScalarType uploadScalar() {
+        return ApolloScalars.Upload;
     }
 }

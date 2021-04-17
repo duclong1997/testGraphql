@@ -1,10 +1,10 @@
 package com.demo.testGraphql.resolvers.user;
 
+import com.demo.testGraphql.context.CustomGraphQlContext;
 import com.demo.testGraphql.models.dtos.RegisterUser;
 import com.demo.testGraphql.models.dtos.UserDto;
 import com.demo.testGraphql.services.UserService;
 import graphql.GraphQLException;
-import graphql.kickstart.servlet.context.DefaultGraphQLServletContext;
 import graphql.kickstart.tools.GraphQLMutationResolver;
 import graphql.schema.DataFetchingEnvironment;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +14,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 
+import javax.servlet.http.Part;
 import javax.validation.Valid;
 import java.io.*;
 
@@ -39,30 +40,33 @@ public class UserMutationResolver implements GraphQLMutationResolver {
 
     // sử dụng với form-data
     // upload file
-    public UserDto uploadFileImg(DataFetchingEnvironment environment) {
-        DefaultGraphQLServletContext context = environment.getContext();
+    public UserDto uploadFileImg(Part avatar, DataFetchingEnvironment environment) {
 
-        context.getFileParts().forEach(part -> {
-            log.info("upload file: {}, size {}", part.getSubmittedFileName(), part.getSize());
-            try {
-                log.info("file data: {} ", part.getInputStream());
-                InputStream initialStream = part.getInputStream();
-                String path = "src/main/resources/images";
-                File targetFile = new File(path);
-                if (!targetFile.exists()) {
-                    targetFile.mkdir();
-                }
-                File file = new File(path + "/" + part.getSubmittedFileName());
-                byte[] buffer = new byte[initialStream.available()];
-                initialStream.read(buffer);
-                OutputStream outStream = new FileOutputStream(file);
-                outStream.write(buffer);
-                outStream.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-                throw new GraphQLException(e.getMessage());
+        // custom context
+        CustomGraphQlContext contextCustom = environment.getContext();
+        log.info("user id: {}", contextCustom.getUserId());
+
+        // get file in argument "avatar"
+        Part part = environment.getArgument("avatar");
+        try {
+            log.info("file data: {} ", part.getInputStream());
+            InputStream initialStream = part.getInputStream();
+
+            String path = "src/main/resources/images";
+            File targetFile = new File(path);
+            if (!targetFile.exists()) {
+                targetFile.mkdir();
             }
-        });
+            File file = new File(path + "/" + part.getSubmittedFileName());
+            byte[] buffer = new byte[initialStream.available()];
+            initialStream.read(buffer);
+            OutputStream outStream = new FileOutputStream(file);
+            outStream.write(buffer);
+            outStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new GraphQLException(e.getMessage());
+        }
         return new UserDto();
     }
 }
