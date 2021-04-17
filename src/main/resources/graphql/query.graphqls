@@ -3,8 +3,8 @@ type Query {
     # book
     bookDetail(id: ID) : book
     getBooks(page: Int, size: Int): [book]
-
-    books(first:Int,after: String): bookConnection @connection(for: "book")
+    # Pagination (Edges, Nodes, Cursor)
+    books(first:Int,after: String): bookConnection
     # shop
     shopDetail(id: ID): shop
     getShops(page: Int, size: Int): [shop]

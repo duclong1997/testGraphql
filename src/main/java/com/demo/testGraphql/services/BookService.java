@@ -14,4 +14,6 @@ public interface BookService {
     List<BookDto> getBooks();
 
     BookDto updateBook(Long id, BookIn in) throws Exception;
+
+    List<BookDto> getBookAfter(Long id);
 }

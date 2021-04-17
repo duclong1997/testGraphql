@@ -16,6 +16,7 @@ import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class BookServiceImpl implements BookService {
@@ -76,5 +77,13 @@ public class BookServiceImpl implements BookService {
             return bookMapper.entityToDto(book);
         }
         throw new GraphQLException("Book not exist");
+    }
+
+    @Override
+    public List<BookDto> getBookAfter(Long id) {
+        List<Book> books = bookRepository.findAll();
+        return bookMapper.entitiesToDtos(books).stream()
+                .dropWhile(bookDto -> bookDto.getId().compareTo(id) != 1)
+                .collect(Collectors.toList());
     }
 }

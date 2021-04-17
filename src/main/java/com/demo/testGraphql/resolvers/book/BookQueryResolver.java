@@ -35,9 +35,10 @@ public class BookQueryResolver implements GraphQLQueryResolver {
     }
 
     public Connection<BookDto> books(int first, @Nullable String cursor) {
-        List<Edge<BookDto>> edges = bookService.getBooks().stream().map(book -> {
-            return new DefaultEdge<>(book, cursorConnection.from(book.getId()));
-        })
+        // list edges => {node, cursor}
+        List<Edge<BookDto>> edges = getBooksWithCursor(cursor)
+                .stream()
+                .map(book -> new DefaultEdge<>(book, cursorConnection.createCursorWith(book.getId())))
                 .limit(first)
                 .collect(Collectors.toList());
 
@@ -46,6 +47,12 @@ public class BookQueryResolver implements GraphQLQueryResolver {
 
         var pageInfo = new DefaultPageInfo(firstCursor, lastCursor, cursor != null, edges.size() >= first);
         return new DefaultConnection<>(edges, pageInfo);
+    }
 
+    private List<BookDto> getBooksWithCursor(String cursor) {
+        if (cursor == null) {
+            return bookService.getBooks();
+        }
+        return bookService.getBookAfter(cursorConnection.decodeCursorWith(cursor));
     }
 }
