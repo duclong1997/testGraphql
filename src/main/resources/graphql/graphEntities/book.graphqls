@@ -14,3 +14,13 @@ input bookIn{
     description: String,
     price: NonNegativeFloat
 }
+
+type bookConnection {
+    edges: [bookEdge]
+    pageInfo: PageInfo
+}
+
+type bookEdge {
+    cursor: String
+    node: book
+}
