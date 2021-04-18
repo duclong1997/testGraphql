@@ -228,6 +228,8 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.attoparser:attoparser:2.0.5.RELEASE" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.unbescape:unbescape:1.1.6.RELEASE" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.thymeleaf.extras:thymeleaf-extras-java8time:3.0.4.RELEASE" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.graphql-java-kickstart:altair-spring-boot-starter:11.0.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.graphql-java-kickstart:altair-spring-boot-autoconfigure:11.0.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.graphql-java-kickstart:graphql-spring-boot-starter-test:11.0.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.graphql-java-kickstart:graphql-spring-boot-test-autoconfigure:11.0.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.graphql-java-kickstart:graphql-spring-boot-test:11.0.0" level="project" />
