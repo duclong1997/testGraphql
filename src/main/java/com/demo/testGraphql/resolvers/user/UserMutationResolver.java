@@ -4,6 +4,7 @@ import com.demo.testGraphql.context.CustomGraphQlContext;
 import com.demo.testGraphql.models.dtos.RegisterUser;
 import com.demo.testGraphql.models.dtos.UserDto;
 import com.demo.testGraphql.services.UserService;
+import com.demo.testGraphql.utils.IOUtil;
 import graphql.GraphQLException;
 import graphql.kickstart.tools.GraphQLMutationResolver;
 import graphql.schema.DataFetchingEnvironment;
@@ -40,7 +41,7 @@ public class UserMutationResolver implements GraphQLMutationResolver {
 
     // sử dụng với form-data
     // upload file
-    public UserDto uploadFileImg(Part avatar, DataFetchingEnvironment environment) {
+    public UserDto uploadFileImg(Part avatar, DataFetchingEnvironment environment) throws IOException {
 
         // custom context
         CustomGraphQlContext contextCustom = environment.getContext();
@@ -48,9 +49,12 @@ public class UserMutationResolver implements GraphQLMutationResolver {
 
         // get file in argument "avatar"
         Part part = environment.getArgument("avatar");
+        InputStream initStream = null;
+        OutputStream outStream = null;
         try {
             log.info("file data: {} ", part.getInputStream());
-            InputStream initialStream = part.getInputStream();
+            log.info("name file: {}, size file: {}", part.getSubmittedFileName(), part.getSize());
+            initStream = part.getInputStream();
 
             String path = "src/main/resources/images";
             File targetFile = new File(path);
@@ -58,14 +62,18 @@ public class UserMutationResolver implements GraphQLMutationResolver {
                 targetFile.mkdir();
             }
             File file = new File(path + "/" + part.getSubmittedFileName());
-            byte[] buffer = new byte[initialStream.available()];
-            initialStream.read(buffer);
-            OutputStream outStream = new FileOutputStream(file);
+            byte[] buffer = new byte[initStream.available()];
+            initStream.read(buffer);
+            outStream = new FileOutputStream(file);
             outStream.write(buffer);
-            outStream.close();
         } catch (IOException e) {
             e.printStackTrace();
             throw new GraphQLException(e.getMessage());
+        } finally {
+            // close inputStream
+            IOUtil.closeQuietly(initStream);
+            // close outputStream
+            IOUtil.closeQuietly(outStream);
         }
         return new UserDto();
     }

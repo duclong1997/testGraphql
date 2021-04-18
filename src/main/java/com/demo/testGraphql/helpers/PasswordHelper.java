@@ -1,6 +1,6 @@
 package com.demo.testGraphql.helpers;
 
-import com.demo.testGraphql.utils.HashUtils;
+import com.demo.testGraphql.utils.HashUtil;
 import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -17,7 +17,7 @@ public class PasswordHelper {
     }
 
     public Pair<String, String> createPassword(String password) {
-        final var salt = HashUtils.generateSalt();
+        final var salt = HashUtil.generateSalt();
         final var saltPassword = createPassword(password, salt);
         return Pair.of(salt, saltPassword);
     }

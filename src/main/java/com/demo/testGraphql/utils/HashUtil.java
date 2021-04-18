@@ -1,7 +1,7 @@
 package com.demo.testGraphql.utils;
 
-public class HashUtils {
-    public HashUtils() {
+public class HashUtil {
+    public HashUtil() {
     }
 
     public static String generateSalt() {

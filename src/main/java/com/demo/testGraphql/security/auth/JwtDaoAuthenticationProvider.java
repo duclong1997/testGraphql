@@ -1,7 +1,7 @@
 package com.demo.testGraphql.security.auth;
 
 import com.demo.testGraphql.security.models.JwtUser;
-import com.demo.testGraphql.utils.HashUtils;
+import com.demo.testGraphql.utils.HashUtil;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -43,7 +43,7 @@ public class JwtDaoAuthenticationProvider extends DaoAuthenticationProvider {
         boolean upgradeEncoding = this.userDetailsPasswordService != null
                 && getPasswordEncoder().upgradeEncoding(user.getPassword());
         if (upgradeEncoding) {
-            String presentedPassword = HashUtils.generateSalt() + authentication.getCredentials().toString();
+            String presentedPassword = HashUtil.generateSalt() + authentication.getCredentials().toString();
             String newPassword = getPasswordEncoder().encode(presentedPassword);
             user = this.userDetailsPasswordService.updatePassword(user, newPassword);
         }
