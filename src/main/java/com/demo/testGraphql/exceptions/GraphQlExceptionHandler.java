@@ -2,6 +2,8 @@ package com.demo.testGraphql.exceptions;
 
 import graphql.GraphQLException;
 import graphql.kickstart.spring.error.ThrowableGraphQLError;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
@@ -15,8 +17,15 @@ public class GraphQlExceptionHandler {
         return new ThrowableGraphQLError(e);
     }
 
+    // error runtime
     @ExceptionHandler(RuntimeException.class)
     public ThrowableGraphQLError handle(RuntimeException e) {
-        return new ThrowableGraphQLError(e, "error server internal ");
+        return new ThrowableGraphQLError(e, HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase());
+    }
+
+    // access deny
+    @ExceptionHandler(AccessDeniedException.class)
+    public ThrowableGraphQLError handle(AccessDeniedException e) {
+        return new ThrowableGraphQLError(e, HttpStatus.FORBIDDEN.getReasonPhrase());
     }
 }

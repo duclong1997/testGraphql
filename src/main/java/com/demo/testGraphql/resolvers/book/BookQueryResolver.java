@@ -29,7 +29,7 @@ public class BookQueryResolver implements GraphQLQueryResolver {
         return bookService.getDetail(id);
     }
 
-    @PreAuthorize("isAuthenticated()")
+    @PreAuthorize("hasAnyAuthority('ROLE_USER','ROLE_ANONYMOUS')")
     public List<BookDto> getBooks(Integer page, Integer size) {
         return bookService.getBooks();
     }

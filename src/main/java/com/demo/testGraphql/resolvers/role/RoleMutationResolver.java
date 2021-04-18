@@ -5,6 +5,7 @@ import com.demo.testGraphql.services.RoleService;
 import graphql.kickstart.tools.GraphQLMutationResolver;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -14,11 +15,12 @@ public class RoleMutationResolver implements GraphQLMutationResolver {
     @Autowired
     private RoleService roleService;
 
-    public RoleDto createRole(String name){
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    public RoleDto createRole(String name) {
         return roleService.createRole(name);
     }
 
-    public RoleDto updateRole(Long id, String name){
+    public RoleDto updateRole(Long id, String name) {
         return roleService.updateRole(id, name);
     }
 }
