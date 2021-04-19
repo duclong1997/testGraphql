@@ -1,4 +1,13 @@
+# validate int greater than or equal to 0 (>=0)
+scalar NonNegativeInt
+# validate float greater than or equal to 0 (>=0)
+scalar NonNegativeFloat
+scalar Date
+scalar DateTime
+scalar Upload
+
 schema {
     query: Query
     mutation: Mutation
+    subscription: Subscription
 }

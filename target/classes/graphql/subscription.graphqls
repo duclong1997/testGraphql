@@ -1,0 +1,4 @@
+type Subscription{
+    books:book!
+    bookDetail(id:ID):book!
+}

@@ -2,6 +2,7 @@ package com.demo.testGraphql.context;
 
 import graphql.kickstart.execution.context.GraphQLContext;
 import graphql.kickstart.servlet.context.DefaultGraphQLServletContext;
+import graphql.kickstart.servlet.context.DefaultGraphQLWebSocketContext;
 import graphql.kickstart.servlet.context.GraphQLServletContextBuilder;
 import org.springframework.stereotype.Component;
 
@@ -22,12 +23,15 @@ public class CustomGraphQlContextBuilder implements GraphQLServletContextBuilder
                 .with(httpServletResponse)
                 .build();
 
-        return new CustomGraphQlContext(userId,context);
+        return new CustomGraphQlContext(userId, context);
     }
 
     @Override
     public GraphQLContext build(Session session, HandshakeRequest handshakeRequest) {
-        throw new IllegalStateException("unsupported");
+        return DefaultGraphQLWebSocketContext.createWebSocketContext()
+                .with(session)
+                .with(handshakeRequest)
+                .build();
     }
 
     @Override

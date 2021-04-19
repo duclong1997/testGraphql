@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.graphql-java:graphql-java-extended-validation:2021-04-09T04-02-09-1824a5d">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/graphql-java/graphql-java-extended-validation/2021-04-09T04-02-09-1824a5d/graphql-java-extended-validation-2021-04-09T04-02-09-1824a5d.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/graphql-java/graphql-java-extended-validation/2021-04-09T04-02-09-1824a5d/graphql-java-extended-validation-2021-04-09T04-02-09-1824a5d-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/graphql-java/graphql-java-extended-validation/2021-04-09T04-02-09-1824a5d/graphql-java-extended-validation-2021-04-09T04-02-09-1824a5d-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
