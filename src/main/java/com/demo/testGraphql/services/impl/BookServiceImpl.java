@@ -4,6 +4,7 @@ import com.demo.testGraphql.mappers.BookMapper;
 import com.demo.testGraphql.models.dtos.BookDto;
 import com.demo.testGraphql.models.dtos.BookIn;
 import com.demo.testGraphql.models.entities.Book;
+import com.demo.testGraphql.publisher.BookPublisher;
 import com.demo.testGraphql.repositories.BookRepository;
 import com.demo.testGraphql.services.BookService;
 import graphql.GraphQLException;
@@ -30,6 +31,9 @@ public class BookServiceImpl implements BookService {
     @Autowired
     private Clock clock;
 
+    @Autowired
+    private BookPublisher bookPublisher;
+
     @Override
     @Transactional
     public BookDto createBook(BookIn in) {
@@ -39,7 +43,12 @@ public class BookServiceImpl implements BookService {
         book.setPrice(in.getPrice());
 
         book = bookRepository.save(book);
-        return bookMapper.entityToDto(book);
+
+        var bookDto = bookMapper.entityToDto(book);
+        // publish
+        bookPublisher.publish(bookDto);
+
+        return bookDto;
     }
 
     @Override

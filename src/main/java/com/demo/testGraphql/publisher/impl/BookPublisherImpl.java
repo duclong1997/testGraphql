@@ -12,8 +12,17 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class BookPublisherImpl extends EntityPublisherImpl<BookDto> implements BookPublisher {
 
+    @Override
     public void publish(BookDto bookDto) {
         this.sink.next(bookDto);
+    }
+
+    @Override
+    public Publisher<BookDto> getBookPublisherForId(Long id) {
+        return processor.filter(book -> id.equals(book.getId())).map(book -> {
+            log.info("publishing book: {}", book);
+            return book;
+        });
     }
 
     @Override
@@ -24,11 +33,4 @@ public class BookPublisherImpl extends EntityPublisherImpl<BookDto> implements B
         });
     }
 
-    @Override
-    public Publisher<BookDto> getBookPublisherForId(Long id) {
-        return processor.filter(book -> id.equals(book.getId())).map(book -> {
-            log.info("publishing book: {}", book);
-            return book;
-        });
-    }
 }
