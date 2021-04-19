@@ -11,10 +11,12 @@ public class ValidationDirectiveConfig {
 
     @Bean
     public ValidationSchemaWiring validationSchemaWiring() {
+
         // This contains by default the standard library provided @Directive constraints
         var validationRules = ValidationRules.newValidationRules()
                 .onValidationErrorStrategy(OnValidationErrorStrategy.RETURN_NULL)
                 .build();
+
         // This will rewrite your data fetchers when rules apply to them so that validation
         return new ValidationSchemaWiring(validationRules);
     }

@@ -1,8 +1,8 @@
-package com.demo.testGraphql.security.jwt;
+package com.demo.testGraphql.config.security.jwt;
 
 import com.demo.testGraphql.models.entities.User;
 import com.demo.testGraphql.repositories.UserRepository;
-import com.demo.testGraphql.security.models.JwtUser;
+import com.demo.testGraphql.config.security.models.JwtUser;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

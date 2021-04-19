@@ -1,6 +1,5 @@
 package com.demo.testGraphql.models.dtos;
 
-import com.demo.testGraphql.utils.RoleName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

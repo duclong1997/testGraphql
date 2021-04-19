@@ -1,7 +1,7 @@
-package com.demo.testGraphql.security.auth;
+package com.demo.testGraphql.config.security.auth;
 
-import com.demo.testGraphql.security.jwt.JwtTokenUtil;
-import com.demo.testGraphql.security.services.JwtUserDetailsService;
+import com.demo.testGraphql.config.security.jwt.JwtTokenUtil;
+import com.demo.testGraphql.config.security.services.JwtUserDetailsService;
 import graphql.kickstart.execution.subscriptions.SubscriptionSession;
 import graphql.kickstart.execution.subscriptions.apollo.ApolloSubscriptionConnectionListener;
 import graphql.kickstart.execution.subscriptions.apollo.OperationMessage;

@@ -1,6 +1,6 @@
-package com.demo.testGraphql.security.jwt;
+package com.demo.testGraphql.config.security.jwt;
 
-import com.demo.testGraphql.security.services.JwtUserDetailsService;
+import com.demo.testGraphql.config.security.services.JwtUserDetailsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

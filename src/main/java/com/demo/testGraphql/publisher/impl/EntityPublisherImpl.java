@@ -12,8 +12,8 @@ import reactor.core.publisher.FluxSink;
 @Slf4j
 public class EntityPublisherImpl<T> {
 
-    public final FluxProcessor<T, T> processor;
-    public final FluxSink<T> sink;
+    protected final FluxProcessor<T, T> processor;
+    protected final FluxSink<T> sink;
 
     public EntityPublisherImpl() {
         this.processor = DirectProcessor.<T>create().serialize();

@@ -5,10 +5,10 @@ public class HashUtil {
     }
 
     public static String generateSalt() {
-        return RandomString.getInstance().nextString();
+        return RandomStringUtil.getInstance().nextString();
     }
 
     public static String generateSalt(int number) {
-        return (new RandomString(number)).nextString();
+        return (new RandomStringUtil(number)).nextString();
     }
 }

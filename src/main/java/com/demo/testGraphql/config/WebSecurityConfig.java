@@ -1,10 +1,10 @@
 package com.demo.testGraphql.config;
 
-import com.demo.testGraphql.security.auth.JwtDaoAuthenticationProvider;
-import com.demo.testGraphql.security.jwt.JwtFilter;
-import com.demo.testGraphql.security.jwt.JwtTokenUtil;
-import com.demo.testGraphql.security.services.JwtUserDetailsPasswordService;
-import com.demo.testGraphql.security.services.JwtUserDetailsService;
+import com.demo.testGraphql.config.security.auth.JwtDaoAuthenticationProvider;
+import com.demo.testGraphql.config.security.jwt.JwtFilter;
+import com.demo.testGraphql.config.security.jwt.JwtTokenUtil;
+import com.demo.testGraphql.config.security.services.JwtUserDetailsPasswordService;
+import com.demo.testGraphql.config.security.services.JwtUserDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
@@ -24,7 +24,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true    )
+@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
 @RequiredArgsConstructor
 @EnableConfigurationProperties(SecurityProperties.class)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -38,6 +38,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private JwtUserDetailsPasswordService jwtUserDetailsPasswordService;
 
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) {
+        auth.authenticationProvider(jwtAuthenticationProvider());
+    }
+
     @Bean
     public AuthenticationProvider jwtAuthenticationProvider() {
         var authenticationProvider = new JwtDaoAuthenticationProvider();
@@ -45,11 +50,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         authenticationProvider.setUserDetailsPasswordService(jwtUserDetailsPasswordService);
         authenticationProvider.setPasswordEncoder(passwordEncoder());
         return authenticationProvider;
-    }
-
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(jwtAuthenticationProvider());
     }
 
     @Bean

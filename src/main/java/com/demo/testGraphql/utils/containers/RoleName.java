@@ -1,4 +1,4 @@
-package com.demo.testGraphql.utils;
+package com.demo.testGraphql.utils.containers;
 
 public enum RoleName {
     ROLE_ADMIN,

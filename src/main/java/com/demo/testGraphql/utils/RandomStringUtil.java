@@ -5,8 +5,8 @@ import java.util.Locale;
 import java.util.Objects;
 import java.util.Random;
 
-public class RandomString {
-    private static RandomString DEFAULT_INSTANCE = null;
+public class RandomStringUtil {
+    private static RandomStringUtil DEFAULT_INSTANCE = null;
     public static final String UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     public static final String LOWER;
     public static final String DIGITS = "0123456789";
@@ -15,15 +15,15 @@ public class RandomString {
     private final char[] symbols;
     private final char[] buf;
 
-    public static RandomString getInstance() {
+    public static RandomStringUtil getInstance() {
         if (DEFAULT_INSTANCE == null) {
-            DEFAULT_INSTANCE = new RandomString();
+            DEFAULT_INSTANCE = new RandomStringUtil();
         }
 
         return DEFAULT_INSTANCE;
     }
 
-    public RandomString(int length, Random random, String symbols) {
+    public RandomStringUtil(int length, Random random, String symbols) {
         if (length < 1) {
             throw new IllegalArgumentException();
         } else if (symbols.length() < 2) {
@@ -35,15 +35,15 @@ public class RandomString {
         }
     }
 
-    public RandomString(int length, Random random) {
+    public RandomStringUtil(int length, Random random) {
         this(length, random, alphanum);
     }
 
-    public RandomString(int length) {
+    public RandomStringUtil(int length) {
         this(length, new SecureRandom());
     }
 
-    public RandomString() {
+    public RandomStringUtil() {
         this(16);
     }
 
