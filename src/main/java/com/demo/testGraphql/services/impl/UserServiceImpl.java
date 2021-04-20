@@ -1,12 +1,18 @@
 package com.demo.testGraphql.services.impl;
 
+import com.demo.testGraphql.helpers.PasswordHelper;
 import com.demo.testGraphql.mappers.UserMapper;
+import com.demo.testGraphql.models.dtos.RegisterUser;
 import com.demo.testGraphql.models.dtos.UserDto;
+import com.demo.testGraphql.models.entities.Role;
 import com.demo.testGraphql.models.entities.User;
+import com.demo.testGraphql.repositories.RoleRepository;
 import com.demo.testGraphql.repositories.UserRepository;
-import com.demo.testGraphql.security.JwtUserDetailsService;
-import com.demo.testGraphql.security.jwt.JwtTokenUtil;
+import com.demo.testGraphql.config.security.jwt.JwtTokenUtil;
+import com.demo.testGraphql.config.security.services.JwtUserDetailsService;
 import com.demo.testGraphql.services.UserService;
+import com.demo.testGraphql.utils.containers.UserStatus;
+import graphql.GraphQLException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -15,6 +21,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -34,8 +41,16 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
-    public UserServiceImpl(AuthenticationManager authenticationManager) {
+    @Autowired
+    private PasswordHelper passwordHelper;
+
+    @Autowired
+    private RoleRepository roleRepository;
+
+    public UserServiceImpl(AuthenticationManager authenticationManager, PasswordHelper passwordHelper, RoleRepository roleRepository) {
         this.authenticationManager = authenticationManager;
+        this.passwordHelper = passwordHelper;
+        this.roleRepository = roleRepository;
     }
 
     @Override
@@ -53,5 +68,47 @@ public class UserServiceImpl implements UserService {
             userDto.setToken(jwtToken);
         }
         return userDto;
+    }
+
+    @Override
+    public UserDto getMe() {
+        User user = jwtTokenUtil.getUserCurrent();
+        return userMapper.entityToDto(user);
+    }
+
+    @Override
+    public UserDto register(RegisterUser userRegister) {
+        if (userRegister.getUsername() == null) {
+            throw new GraphQLException("username is not null");
+        }
+        Optional<User> userOp = userRepository.findTopByUsername(userRegister.getUsername().toLowerCase());
+        if (userOp.isPresent()) {
+            throw new GraphQLException("user is existed");
+        }
+
+        User user = new User();
+        user.setEnabled(UserStatus.ACTIVE);
+        user.setEmail(userRegister.getEmail());
+        user.setUsername(userRegister.getUsername().toLowerCase());
+        user.setFirstname(userRegister.getFirstname());
+        user.setLastname(userRegister.getLastname());
+        // salt and password
+        final var saltPasswordPair = passwordHelper.createPassword(userRegister.getPassword());
+        user.setSalt(saltPasswordPair.getLeft());
+        user.setPassword(saltPasswordPair.getRight());
+        // role
+        if (userRegister.getRoleId() != null) {
+            Optional<Role> roleOp = roleRepository.findById(userRegister.getRoleId());
+            if (roleOp.isPresent()) {
+                user.setRole(roleOp.get());
+                user = userRepository.save(user);
+
+                return userMapper.entityToDto(user);
+            }
+        }
+        user.setRole(null);
+        user = userRepository.save(user);
+
+        return userMapper.entityToDto(user);
     }
 }

@@ -1,0 +1,16 @@
+# unpdate or insert db by graphql
+type Mutation {
+    # book
+    createBook(in: bookIn): book
+    updateBook(id: ID, in: bookIn): book
+    # shop
+    createShop(in: shopIn): shop
+    updateShop(id:ID, in: shopIn): shop
+    # user
+    login(username: String!, password: String!): user
+    register(userRegister: registerUser): user
+    uploadFileImg(avatar: Upload!): user
+    # role
+    createRole(name: String):role
+    updateRole(id:ID, name: String):role
+}

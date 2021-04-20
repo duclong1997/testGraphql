@@ -1,6 +1,5 @@
 package com.demo.testGraphql.models.entities;
 
-import com.demo.testGraphql.utils.RoleName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,8 +21,7 @@ public class Role implements Serializable {
 
     @Column(name = "name", length = 50)
     @NotNull
-    @Enumerated(EnumType.STRING)
-    private RoleName name;
+    private String name;
 
     @OneToMany(mappedBy = "role", fetch = FetchType.LAZY)
     private List<User> users;

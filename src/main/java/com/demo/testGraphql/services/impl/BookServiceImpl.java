@@ -4,14 +4,20 @@ import com.demo.testGraphql.mappers.BookMapper;
 import com.demo.testGraphql.models.dtos.BookDto;
 import com.demo.testGraphql.models.dtos.BookIn;
 import com.demo.testGraphql.models.entities.Book;
+import com.demo.testGraphql.publisher.BookPublisher;
 import com.demo.testGraphql.repositories.BookRepository;
 import com.demo.testGraphql.services.BookService;
+import graphql.GraphQLException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.time.Clock;
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class BookServiceImpl implements BookService {
@@ -22,6 +28,12 @@ public class BookServiceImpl implements BookService {
     @Autowired
     private BookMapper bookMapper;
 
+    @Autowired
+    private Clock clock;
+
+    @Autowired
+    private BookPublisher bookPublisher;
+
     @Override
     @Transactional
     public BookDto createBook(BookIn in) {
@@ -31,7 +43,12 @@ public class BookServiceImpl implements BookService {
         book.setPrice(in.getPrice());
 
         book = bookRepository.save(book);
-        return bookMapper.entityToDto(book);
+
+        var bookDto = bookMapper.entityToDto(book);
+        // publish
+        bookPublisher.publish(bookDto);
+
+        return bookDto;
     }
 
     @Override
@@ -40,9 +57,12 @@ public class BookServiceImpl implements BookService {
         Optional<Book> bookOp = bookRepository.findById(id);
         if (bookOp.isPresent()) {
             Book book = bookOp.get();
+            BookDto bookDto = bookMapper.entityToDto(book);
+            bookDto.setCreateAt(ZonedDateTime.now(clock));
+            bookDto.setCreateOn(LocalDate.now(clock));
             return bookMapper.entityToDto(book);
         }
-        throw new Exception("book not exist");
+        throw new GraphQLException("book not exist");
     }
 
     @Override
@@ -65,6 +85,14 @@ public class BookServiceImpl implements BookService {
             book = bookRepository.save(book);
             return bookMapper.entityToDto(book);
         }
-        throw new Exception("Book not exist");
+        throw new GraphQLException("Book not exist");
+    }
+
+    @Override
+    public List<BookDto> getBookAfter(Long id) {
+        List<Book> books = bookRepository.findAll();
+        return bookMapper.entitiesToDtos(books).stream()
+                .dropWhile(bookDto -> bookDto.getId().compareTo(id) != 1)
+                .collect(Collectors.toList());
     }
 }

@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
 
 
 @Data
@@ -17,5 +19,9 @@ public class BookDto implements Serializable {
     private String name;
     private String description;
     private Float price;
+    // datetime
+    private ZonedDateTime createAt;
+    // date
+    private LocalDate createOn;
 
 }

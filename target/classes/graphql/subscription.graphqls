@@ -1,0 +1,9 @@
+type Subscription{
+    # book
+    books:book!
+    bookDetail(id:ID):book!
+
+    # shop
+    shops:shop!
+    shopDetail(id:ID): shop!
+}
