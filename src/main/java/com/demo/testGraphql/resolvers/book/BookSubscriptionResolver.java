@@ -25,4 +25,5 @@ public class BookSubscriptionResolver implements GraphQLSubscriptionResolver {
     public Publisher<BookDto> bookDetail(Long id) {
         return bookPublisher.getBookPublisherForId(id);
     }
+
 }
